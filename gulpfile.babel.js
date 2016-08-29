@@ -27,6 +27,7 @@ gulp.task('webserver', () =>
 			host: 'localhost',
 			port: 8000,
 			livereload: true,
+			open: true
 		}))
 )
 
