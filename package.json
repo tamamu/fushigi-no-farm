@@ -1,0 +1,30 @@
+{
+  "name": "harvest",
+  "version": "1.0.0",
+  "description": "A roguelike farming simulation rpg",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "roguelike",
+    "rpg",
+    "farm"
+  ],
+  "author": "tamamu",
+  "license": "ISC",
+  "dependencies": {
+    "pixi.js": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.13.2",
+    "babel-preset-es2015": "^6.13.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-webserver": "^0.9.1"
+  }
+}
