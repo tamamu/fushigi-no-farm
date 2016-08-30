@@ -10,5 +10,6 @@
     "comma-dangle": 0,
 	"import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
 	"new-cap": [1,  {"newIsCap": true, "capIsNew": true}],
+	"no-console": 0,
   }
 }
