@@ -12,15 +12,11 @@ const targets = [
 ];
 
 gulp.task('babel', () =>
-	browserify('src/main.js', {debug: true})
+	browserify('src/main.js', { debug: true })
 		.transform(babelify)
 		.bundle()
-		.on('error', (err) => console.log('Error : ' + err.message))
+		.on('error', (err) => console.log(`Error : ${err.message}`))
 		.pipe(source('main.js'))
-		//.pipe($.plumber())
-		//.pipe($.sourcemaps.init())
-		//.pipe($.babel())
-		//.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('dist'))
 );
 
@@ -40,4 +36,4 @@ gulp.task('reload', () =>
 		.pipe($.webserver.reload())
 );
 
-gulp.task('default', ['webserver', 'watch']);
+gulp.task('default', ['babel', 'webserver', 'watch']);
