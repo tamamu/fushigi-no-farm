@@ -5,7 +5,8 @@
     Copyright (C) 2016 Tamamu (https://tamamu.github.io)
 */
 
-import * as PIXI from 'pixi.js';
+import PIXI from 'pixi.js';
+import Test from './Test';
 
 class Player {
   constructor(sprite, x, y) {
@@ -57,6 +58,8 @@ stage.addChild(sprite);
 
 function animate() {
   requestAnimationFrame(animate);
+  const test = new Test(2, 5);
+  test.text();
 
   player.animate();
 
