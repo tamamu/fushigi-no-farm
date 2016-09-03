@@ -6,10 +6,6 @@ import source from 'vinyl-source-stream';
 
 const $ = gulpLoadPlugins();
 
-const targets = [
-  'src/*.js',
-  'index.html',
-];
 
 gulp.task('babel', () =>
 	browserify('src/main.js', { debug: true })
@@ -21,19 +17,22 @@ gulp.task('babel', () =>
 );
 
 gulp.task('watch', () =>
-	gulp.watch('src/*.js', ['babel', 'reload'])
+	gulp.watch('src/*.js', ['babel'])
 );
 
 gulp.task('webserver', () => gulp.src('./').pipe($.webserver({
   host: 'localhost',
   port: 8000,
-  livereload: true,
-  open: true
+  livereload: {
+    enable: true,
+    filter: (filename) => {
+      if (filename.match(/src\/.*\.js/)) {
+        return false;
+      }
+      return true;
+    }
+  },
+  open: false
 })));
-
-gulp.task('reload', () =>
-	gulp.src(targets)
-		.pipe($.webserver.reload())
-);
 
 gulp.task('default', ['babel', 'webserver', 'watch']);
